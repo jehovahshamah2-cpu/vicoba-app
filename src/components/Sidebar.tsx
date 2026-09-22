@@ -1,25 +1,23 @@
 import { NavLink } from 'react-router-dom';
-import {
-  LayoutDashboard,
-  Users,
-  Coins,
-  HeartHandshake,
-  AlertTriangle,
-  HandCoins,
-  BarChart3,
-  Settings,
-  Landmark,
-} from 'lucide-react';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import PeopleIcon from '@mui/icons-material/People';
+import PaidIcon from '@mui/icons-material/Paid';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import WarningIcon from '@mui/icons-material/Warning';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 
 const menu = [
-  { to: '/', label: 'Dashibodi', icon: LayoutDashboard, end: true },
-  { to: '/wanachama', label: 'Wanachama', icon: Users },
-  { to: '/hisa', label: 'Hisa', icon: Coins },
-  { to: '/pesa-jamii', label: 'Pesa ya Jamii', icon: HeartHandshake },
-  { to: '/faini', label: 'Faini', icon: AlertTriangle },
-  { to: '/mikopo', label: 'Mikopo', icon: HandCoins },
-  { to: '/ripoti', label: 'Ripoti', icon: BarChart3 },
-  { to: '/mipangilio', label: 'Mipangilio', icon: Settings },
+  { to: '/', label: 'Dashibodi', icon: DashboardIcon, end: true },
+  { to: '/wanachama', label: 'Wanachama', icon: PeopleIcon },
+  { to: '/hisa', label: 'Hisa', icon: PaidIcon },
+  { to: '/pesa-jamii', label: 'Pesa ya Jamii', icon: VolunteerActivismIcon },
+  { to: '/faini', label: 'Faini', icon: WarningIcon },
+  { to: '/mikopo', label: 'Mikopo', icon: PaymentsIcon },
+  { to: '/ripoti', label: 'Ripoti', icon: BarChartIcon },
+  { to: '/mipangilio', label: 'Mipangilio', icon: SettingsIcon },
 ];
 
 interface SidebarProps {
@@ -33,7 +31,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
       <div className={`overlay ${open ? 'show' : ''}`} onClick={onClose} />
       <aside className={`sidebar ${open ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <Landmark size={22} />
+          <AccountBalanceIcon sx={{ fontSize: 22 }} />
           <span>VICOBA</span>
         </div>
         <nav className="sidebar-nav">
@@ -49,7 +47,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                 }
                 onClick={onClose}
               >
-                <Icon size={18} />
+                <Icon sx={{ fontSize: 20 }} />
                 <span>{item.label}</span>
               </NavLink>
             );
